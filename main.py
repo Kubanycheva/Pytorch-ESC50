@@ -54,8 +54,8 @@ transform = transforms.MelSpectrogram(
 
 max_len = 500
 
-genres = torch.load('labels_esc.pth')
-index_to_labels = {ind: lab for ind, lab in enumerate(genres)}
+esc = torch.load('labels_esc.pth')
+index_to_labels = {ind: lab for ind, lab in enumerate(esc)}
 
 model = CheckAudio()
 model.load_state_dict(torch.load('model_esc.pth', map_location=device))
